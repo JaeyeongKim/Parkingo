@@ -52,7 +52,7 @@ class _MainScreenState extends State<MainScreen> {
 
     if(!_ch){
       _timer = Timer.periodic(const Duration(seconds: 5), (timer) async{
-        final response = await dio.get('http://3.36.26.33:5000/');
+        final response = await dio.get('server_ip');
         setState(() {
           _oldvalue = _newvalue;
           _newvalue = int.parse(response.toString());
@@ -88,7 +88,7 @@ class _MainScreenState extends State<MainScreen> {
     return color;
   }
   void _getvacncy() async {
-    final response = await dio.get('http://3.36.26.33:5000/');
+    final response = await dio.get('server_ip');
     print(response);
     setState(() {
       _vacancy = 55 + int.parse(response.toString());
