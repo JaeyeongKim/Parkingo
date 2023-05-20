@@ -28,7 +28,7 @@ class _TestScreenState extends State<TestScreen> {
   }
 
   void getHttp() async {
-    final response = await dio.get('http://3.36.26.33:5000/');
+    final response = await dio.get('server_ip');
     print(response);
   }
 

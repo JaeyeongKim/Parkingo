@@ -68,7 +68,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
   void sendNotification() async{
     if(!favoriteColor[0]){
       _timer = Timer.periodic(const Duration(seconds: 5), (timer) async{
-        final response = await dio.get('http://3.36.26.33:5000/');
+        final response = await dio.get('server_ip');
         print(response);
         setState(() {
           _oldvalue = _newvalue;
@@ -89,7 +89,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
   }
 
   void _getvacncy() async {
-    final response = await dio.get('http://3.36.26.33:5000/');
+    final response = await dio.get('server_ip');
     setState(() {
       _vacancy = 55 + int.parse(response.toString());
       _vacancyEng = _vacancy - 55;
